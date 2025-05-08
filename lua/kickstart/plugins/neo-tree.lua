@@ -11,13 +11,24 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { 'C-n', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<C-n>', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    event_handlers = {
+      {
+        event = 'file_opened',
+        handler = function()
+          -- auto close
+          -- vimc.cmd("Neotree close")
+          -- OR
+          require('neo-tree.command').execute { action = 'close' }
+        end,
+      },
+    },
     filesystem = {
       window = {
         mappings = {
-          ['C-n'] = 'close_window',
+          ['<C-n>'] = 'close_window',
         },
       },
     },

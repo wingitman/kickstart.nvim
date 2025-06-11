@@ -121,6 +121,8 @@ end)
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- No swap files
+vim.opt.noswapfile = true
 -- Save undo history
 vim.opt.undofile = true
 vim.opt.wrap = false
@@ -681,7 +683,14 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-
+        angularls = {
+          project_library_path = vim.fn.getcwd() .. '/node_modules',
+          cmd = { 'ngserver', '--stdio', '--tsProbeLocations', vim.fn.getcwd() .. '/node_modules', '--ngProbeLocations', vim.fn.getcwd() .. '/node_modules' },
+          on_new_config = function(new_config, new_root_dir)
+            new_config.cmd =
+              { 'ngserver', '--stdio', '--tsProbeLocations', vim.fn.getcwd() .. '/node_modules', '--ngProbeLocations', vim.fn.getcwd() .. '/node_modules' }
+          end,
+        },
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },

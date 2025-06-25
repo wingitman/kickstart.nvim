@@ -122,12 +122,12 @@ end)
 vim.opt.breakindent = true
 
 -- No swap files
-vim.opt.noswapfile = true
+vim.opt.swapfile = false
 -- Save undo history
 vim.opt.undofile = true
-vim.opt.wrap = false
+vim.opt.wrap = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
+vim.opt.ignorecase = false 
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default

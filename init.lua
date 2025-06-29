@@ -127,7 +127,7 @@ vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.wrap = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = false 
+vim.opt.ignorecase = false
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
@@ -786,6 +786,7 @@ require('lazy').setup({
         html = { 'superhtml' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
+        typescript = { 'ts-standard', 'prettierd', 'prettier', stop_after_first = true },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         json = { 'prettierd', 'prettier', stop_after_first = true },
       },

@@ -452,7 +452,20 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-      vim.keymap.set('n', '<leader>sa', function()
+      vim.keymap.set('n', '<leader>sag', function()
+        builtin.live_grep {
+          find_command = {
+            'rg',
+            '--type',
+            'f',
+            '--no-ignore-vcs',
+            '--color=never',
+            '--hidden',
+            '--follow',
+          },
+        }
+      end, { desc = '[S]earch [A]ll Files' }) --find_command = { 'fd', '--type', 'f', '--no-ignore-vcs', '--hidden', '--follow' } })
+      vim.keymap.set('n', '<leader>saf', function()
         builtin.find_files {
           find_command = {
             'fd',

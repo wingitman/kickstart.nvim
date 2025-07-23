@@ -464,7 +464,7 @@ require('lazy').setup({
             '--follow',
           },
         }
-      end, { desc = '[S]earch [A]ll Files' }) --find_command = { 'fd', '--type', 'f', '--no-ignore-vcs', '--hidden', '--follow' } })
+      end, { desc = '[S]earch [A]ll by [G]rep' }) --find_command = { 'fd', '--type', 'f', '--no-ignore-vcs', '--hidden', '--follow' } })
       vim.keymap.set('n', '<leader>saf', function()
         builtin.find_files {
           find_command = {
@@ -477,7 +477,7 @@ require('lazy').setup({
             '--follow',
           },
         }
-      end, { desc = '[S]earch [A]ll Files' }) --find_command = { 'fd', '--type', 'f', '--no-ignore-vcs', '--hidden', '--follow' } })
+      end, { desc = '[S]earch [A]ll [F]iles' }) --find_command = { 'fd', '--type', 'f', '--no-ignore-vcs', '--hidden', '--follow' } })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })

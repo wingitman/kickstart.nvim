@@ -27,6 +27,7 @@ return {
     },
     filesystem = {
       window = {
+        width = 80,
         mappings = {
           ['<C-n>'] = 'close_window',
         },
